@@ -22,5 +22,5 @@ psql -U postgres -h localhost
 sudo su postgres
 
 # create a new user
-CREATE USER mob_db_user WITH PASSWORD ' mob_db_pass';
+sudo -i -u postgres ppsql -c "CREATE USER mob_db_user WITH PASSWORD 'mob_db_pass';"
 
