@@ -34,3 +34,32 @@ source ~/.bashrc
 
 # Finish executing script as sys_user
 EOF
+
+# Create a virtual environment called env
+sudo python3 -m venv env/
+
+# Activate virtual environment
+activate() {
+    env/bin/activate
+}
+
+# Install backend requirements
+pip3 install Mobalysis/backend/requirements.txt
+
+# Make new migrations
+python3 Mobalysis/backend/manage.py makemigrations
+
+# Install backend migrations
+python3 Mobalysis/backend/manage.py migrate
+
+# Install frontend requirements
+cd Mobalysis/frontend
+sudo npm install
+sudo npm run build
+
+# Copy build files 
+sudo cp build/* /var/www/html
+sudo rm -rf /var/www/html/index.nginx.debian.html
+
+# Restart nginx
+sudo systemctl restart nginx
