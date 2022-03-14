@@ -58,7 +58,7 @@ sudo npm install
 sudo npm run build
 
 # Copy build files 
-sudo cp build/* /var/www/html
+sudo cp -r build/* /var/www/html
 sudo rm -rf /var/www/html/index.nginx.debian.html
 
 # Restart nginx

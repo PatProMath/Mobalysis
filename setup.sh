@@ -8,7 +8,7 @@ sys_user_dir=/home/$sys_user
 # Runs Ubuntu 20.04 system update 
 sudo apt-get update -y
 
-sudo apt-get install python3-venv nginx curl
+sudo apt-get install python3-venv nginx curl -y
 
 # Installs the PostgreSQL 
 sudo apt-get install postgresql -y
